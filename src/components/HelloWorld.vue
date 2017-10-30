@@ -1,6 +1,15 @@
 <template>
   <div>
     {{ msg }}
+    <div class='test'>
+     <h1>ddd</h1>
+    </div>
+    <div class='test'>
+     <h1>ddd</h1>
+    </div>
+    <div class='test'>
+     <h1>ddd</h1>
+    </div>
   </div>
 </template>
 
@@ -17,5 +26,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+ .test{
+   height: 300px;
+ }
 </style>
