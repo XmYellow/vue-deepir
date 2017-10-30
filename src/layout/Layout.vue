@@ -1,18 +1,19 @@
 <template>
     <el-container>
-      <el-header>
-         <img :src='logo' class='logo' />
-      </el-header>
-      <el-container>
-        <el-aside width="200px">
+       <el-aside width="200px">
           <el-menu
               default-active="2"
               class="el-menu-vertical-demo"
               @open="handleOpen"
               @close="handleClose"
-              background-color="#545c64"
+              background-color="#3e3e3e"
               text-color="#ccc"
-              active-text-color="#fff">
+              active-text-color="#fff"
+              active-background-color="#fff"
+             >
+              <div class='logo-box'>
+                 <img :src='logo' class='logo' />
+              </div>
               <router-link :to="{ name: 'test'}">
               <el-menu-item index="1">
                 <i class="el-icon-menu"></i>
@@ -51,7 +52,7 @@
                   <span slot="title">客户管理</span>
               </el-menu-item>
               </router-link>
-              <router-link :to="{ name: 'test'}">
+              <router-link :to="{ name: 'chart'}">
               <el-menu-item index="5">
                   <i class="el-icon-picture"></i>
                   <span slot="title">图片列表</span>
@@ -59,6 +60,9 @@
               </router-link>
             </el-menu>
         </el-aside>
+      <el-container>
+       
+         <el-header>Header</el-header>
         <el-main>
           <router-view/>
         </el-main>
@@ -93,7 +97,7 @@ export default {
 <style>
 .el-header,
 .el-footer {
-  background-color: #545c64;
+  background-color: #fff;
   color: #fff;
   line-height: 60px;
 }
@@ -102,29 +106,36 @@ export default {
   position: fixed;
   top: 0;
   width: 100%;
+  left:200px;
 }
 .el-footer {
   text-align: center;
 }
+.logo-box{
+  height: 100px;
+}
 .logo {
   margin: 0;
-  padding: 10px 5px;
+  padding: 30px 20px;
 }
 .el-aside {
-  background-color: #545c64;
+  background-color:#3e3e3e;
   color: #333;
   text-align: left;
   line-height: 200px;
   position: fixed;
-  top: 59px;
+  top: 0;
   left: 0;
   bottom: 0;
+}
+.router-link-exact-active .router-link-active >li{
+  background-color: #fff;
 }
 .el-menu {
   border-right: none;
 }
 .el-main {
-  background-color: #e9eef3;
+  background-color: #f8f8f8;
   color: #333;
   text-align: center;
   line-height: 160px;
