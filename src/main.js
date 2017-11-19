@@ -7,10 +7,13 @@ import Vuex from 'vuex'
 import ElementUI from 'element-ui'
 import store from './store/index'
 import 'element-ui/lib/theme-chalk/index.css'
+import axios from 'axios'
 
 Vue.config.productionTip = false
 Vue.use(Vuex)
 Vue.use(ElementUI)
+axios.defaults.timeout = 5000
+Vue.prototype.$http = axios
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

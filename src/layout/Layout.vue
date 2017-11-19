@@ -35,7 +35,7 @@
                   <span>数据查询</span>
                 </template>
                 <router-link :to="{ name: 'Hello'}">
-                  <el-menu-item index="3-1">  
+                  <el-menu-item index="3-1">
                     <i class="el-icon-tickets"></i>
                     <span slot="title">条件查询</span>
                   </el-menu-item>
@@ -64,7 +64,7 @@
       <el-container>
          <el-header>
             <div class="el-header-text">{{username}}</div>
-            <div class="el-header-text red el-header-btn" role="button"> 
+            <div class="el-header-text red el-header-btn" role="button">
                <el-button type="danger" size="mini">退出</el-button>
             </div>
          </el-header>
@@ -74,7 +74,7 @@
       </el-container>
     </el-container>
   </div>
-   
+
 </template>
 
 <script>

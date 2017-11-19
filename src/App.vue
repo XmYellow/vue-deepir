@@ -1,11 +1,11 @@
 <template>
-  <div id="app"> 
+  <div id="app">
     <layout />
   </div>
 </template>
 
 <script>
-import layout from "./layout/layout.vue";
+import layout from "./layout/Layout.vue";
 export default {
   name: "app",
   components: {
@@ -13,11 +13,11 @@ export default {
   },
   data() {
     return {
-     
+
     };
   },
   methods: {
-    
+
   }
 };
 </script>

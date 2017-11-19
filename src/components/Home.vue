@@ -1,34 +1,41 @@
 <template>
   <div class="home">
-    <el-row :gutter="20">
-      <el-col :span="6"><div class="grid-content-sm bg-purple"></div></el-col>
-      <el-col :span="6"><div class="grid-content-sm bg-purple"></div></el-col>
-      <el-col :span="6"><div class="grid-content-sm bg-purple"></div></el-col>
-      <el-col :span="6"><div class="grid-content-sm bg-purple"></div></el-col>
-    </el-row>
-    <el-row :gutter="20">
-      <el-col :span="12"><div class="grid-content-xl bg-purple-light"></div></el-col>
-      <el-col :span="12"><div class="grid-content-xl bg-purple-light"></div></el-col>
-    </el-row>
-    <el-row :gutter="20">
-      <el-col :span="24"><div class="grid-content-xl bg-purple"></div></el-col>
-    </el-row>
+    <h1>home</h1>
+    <h1>{{ cart.name }}</h1>
+    <p>{{ list }}</p>
+    <button @click="set()">click</button>
   </div>
 </template>
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapState, mapActions, mapGetters, mapMutations } from "vuex";
 export default {
+  name: 'home',
   data() {
     return {
       counter: 0
     };
   },
   computed: {
-    ...mapState({})
+    ...mapGetters('cart', [
+      'cart',
+      'list',
+      'money'
+    ])
   },
 
   methods: {
-    ...mapActions([])
+    ...mapActions([]),
+    ...mapActions('cart', [
+      'SET_CART',
+      'CLEAR_CART'
+    ]),
+    set () {
+      this.SET_CART({
+        name: '你是huang'
+      })
+      console.log(this.$store)
+      this.$http.get('www.baidu.com')
+    }
   }
 };
 </script>
